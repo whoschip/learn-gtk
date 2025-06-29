@@ -6,7 +6,7 @@ class page(Gtk.ApplicationWindow):
     def __init__(self, **kargs):
         super().__init__(**kargs, title="gooning simulator")
         self.goon = 0
-        self.button = Gtk.Button(label='Click Here')
+        self.button = Gtk.Button(label='GOON')
         self.button.connect('clicked', self.on_button_clicked)
         self.set_child(self.button)
     
