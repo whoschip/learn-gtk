@@ -11,11 +11,15 @@ class page(Gtk.ApplicationWindow):
         self.set_titlebar(header)
         self.TotalGoonTimes = Gtk.Label(label=f"Total goon times: {self.goon}")
         header.pack_start(self.TotalGoonTimes)
+        # grid
+        grid = Gtk.Grid()
 
         # main funtion
         self.button = Gtk.Button(label='GOON')
+        grid.attach(self.button, 0, 0, 5, 10)
         self.button.connect('clicked', self.on_button_clicked)
-        self.set_child(self.button)
+
+        self.set_child(grid)
     
     def on_button_clicked(self, _widget):
         self.goon += 1
