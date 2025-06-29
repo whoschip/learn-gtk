@@ -5,14 +5,16 @@ from gi.repository import Gtk
 class page(Gtk.ApplicationWindow):
     def __init__(self, **kargs):
         super().__init__(**kargs, title="gooning simulator")
+        self.goon = 0
         self.button = Gtk.Button(label='Click Here')
         self.button.connect('clicked', self.on_button_clicked)
         self.set_child(self.button)
     
     def on_button_clicked(self, _widget):
-        goon += 1
+        self.goon += 1
         print('goon-ed')
-        print(f'Total goon times : {goon}')
+        print(f'Total goon times: {self.goon}')
+
 
 def on_activate(app):
     win = page(application=app)
